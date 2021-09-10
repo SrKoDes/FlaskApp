@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Fight!</title>
+    <link href="./static/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+  <body id = "arena">
+    
+    <div id = "fightInfo">
+    </div>
+
+    <div id = "attacker">
+    </div>
+    
+    <div id = "player">
+
+      <div id = "playerPic">
+        <img src = "/static/images/Bear.jpg">
+      </div>
+
+    </div>
+    
+    <div id = "actions">
+
+      <div class = "actionSpacer"></div>
+
+      <button id = "attack"> Attack </button>
+
+      <div class = "actionSpacer"></div>
+
+      <button id = "abilities"> Use Abilities </button>
+
+      <div class = "actionSpacer"></div>
+    </div>
+    
+    <div id = "abilitiesMenu">
+      abilities
+    </div>
+
+    <script src="./static/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("static/images/colosseum.jpeg");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+nav{
+  width: 81vw;
+  height: 100px;
+  background: #FFF;
+  margin-top:20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/static/images/blood_nav_bar.jpeg");
+}
+
+h1{
+  color: green;
+  font-size: 80px;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+a, a:active{
+  color: black
+}
+
+.imgButtonPair{
+  width: 20vw;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+} 
+
+.myButton{
+  font-size: 30px;
+  background: black;
+  color: white;
+  position: bottom;
+}
+
