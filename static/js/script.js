@@ -11,10 +11,11 @@ const abilitiesMenu = document.getElementById('abilitiesMenu');
 
 //player elements
 const playerPic = document.getElementById('playerPic');
+const roleName = "Bear"
 
 
 //buttons
-// attackButton.addEventListener('click', )
+attackButton.addEventListener('click', populatePlayerDiv);
 abilitiesButton.addEventListener('click', goAbilitiesMenu);
 
 // function getPlayer() {
@@ -34,6 +35,13 @@ function getRandomDog() {
   });
 }
 
+function populatePlayerDiv() {
+  fetch(`/player/info?element=${roleName}`)
+  .then( result => result.json())
+  .then( data => {
+      playerPic.innerHTML = data
+  });
+}
 
 function goAbilitiesMenu() {
   actionMenu.parentNode.removeChild(actionMenu)
