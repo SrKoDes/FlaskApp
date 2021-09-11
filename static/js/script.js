@@ -1,5 +1,7 @@
+//index html
 
-//arena html
+
+//arena html variables
 //actions elements
 const actionMenu = document.getElementById('actions');
 const attackButton = document.getElementById('attack');
@@ -10,20 +12,15 @@ const abilitiesMenu = document.getElementById('abilitiesMenu');
 
 
 //player elements
-const playerPic = document.getElementById('playerPic');
 const roleName = "Bear"
-
+const playerPicUrl= "/static/images/Bear.jpg"
 
 //buttons
 attackButton.addEventListener('click', populatePlayerDiv);
 abilitiesButton.addEventListener('click', goAbilitiesMenu);
 
-// function getPlayer() {
-//   playerResult.innerHTML = `<img src = "${'https://random.dog/cf730b6b-1810-4a1a-a2f3-583ee28dce4b.jpg'}"/>`
-// }
-
 function getRandomDog() {
-  fetch('https://random.dog/woof.json')
+  fetch('https://random.dog/woof.json', )
   .then(result => result.json())
   .then( data => {
     if(data.url.includes('.mp4')) {
@@ -36,12 +33,19 @@ function getRandomDog() {
 }
 
 function populatePlayerDiv() {
-  fetch(`/player/info?element=${roleName}`)
+  fetch(`/character/info?element=${roleName}`)
   .then( result => result.json())
   .then( data => {
-      playerPic.innerHTML = data
+    console.log(data)
+    console.log(data[0])
+      playerHP.innerHTML = `HP: ${data[0][1]}`
+      playerDMG.innerHTML = `Damage: ${data[0][2]}`
+      playerArmor.innerHTML = `Armor: ${data[0][3]}`
+      playerSpecial.innerHTML = `SPECIAL ${data[0][4]}`
   });
+  playerPic.innerHTML = `<img src = ${playerPicUrl}/>`
 }
+
 
 function goAbilitiesMenu() {
   actionMenu.parentNode.removeChild(actionMenu)

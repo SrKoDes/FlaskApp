@@ -9,16 +9,32 @@
   </head>
   <body id = "arena">
     
-    <div id = "fightInfo">
-    </div>
+    <div id = "fightInfo"></div>
 
-    <div id = "attacker">
+    <div id = "enemy">
+
+      <div id = "enemyInfo">
+
+        <div id = "enemyHP">HP: {{data[2][1]}}</div>
+        <div id = "enemyDMG">Damage: {{data[2][2]}}</div>
+        <div id = "enemyArmor">Armor: {{data[2][3]}}</div>
+        <div id = "enemySpecial">SPECIAL {{data[2][4]}}</div>
+
+      </div>
+
+      <div id = "enemyPic"> <img src = "{{data[3]}}"> </div>
+
     </div>
     
     <div id = "player">
 
-      <div id = "playerPic">
-        <img src = "/static/images/Bear.jpg">
+      <div id = "playerPic"> <img src = "{{data[1]}}"></div>
+
+      <div id = "playerInfo">
+        <div id = "playerHP">HP: {{data[0][1]}}</div>
+        <div id = "playerDMG">Damage: {{data[0][2]}}</div>
+        <div id = "playerArmor">Armor: {{data[0][3]}}</div>
+        <div id = "playerSpecial">SPECIAL {{data[0][4]}}</div>
       </div>
 
     </div>

@@ -13,7 +13,6 @@ body{
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -41,7 +40,8 @@ h1{
 }
 
 a, a:active{
-  color: black
+  color: black;
+  font-size: 30px;
 }
 
 .imgButtonPair{
@@ -79,7 +79,7 @@ img{
 #arena{
   width: 100vw;
   height: 100vh;
-  background-image: url("/static/images/colosseum.jpeg");
+  background-image: linear-gradient(transparent, white 75%), url("/static/images/colosseum.jpeg");
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -96,22 +96,132 @@ img{
   border: 3px solid red;
 }
 
-#attacker{
+#enemy{
   width: 50vw;
   height: 50vh;
-  border: 3px solid green;
+  border: 3px solid blue;
+  display: flex;
+}
+
+#enemyInfo{
+  width: 25vw;
+  height: 100%;
+  border: 3px solid gold;
+  justify-content: left;
+  display: flex;
+  flex-direction: column;
+}
+
+#enemyHP{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  border: 3px solid blue;
+}
+
+#enemyDMG{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  border: 3px solid blue;
+}
+
+#enemyArmor{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  border: 3px solid blue;
+}
+
+#enemySpecial{
+  width: 100%;
+  height: 40%;
+  border: 3px solid blue;
+  display: flex;
+  justify-content: right;
+  font-size: 30px;
+  align-items: center;
+  text-align: right;
+}
+
+#enemyPic{
+  width: 25vw;
+  max-width: 25vw;
+  height: 100%;
+  border: 3px solid red
 }
 
 #player{
   width: 50vw;
   height: 50vh;
   border: 3px solid blue;
+  display: flex;
 }
 
 #playerPic{
+  width: 25vw;
   max-width: 25vw;
   height: 100%;
   border: 3px solid red
+}
+
+#playerInfo{
+  width: 25vw;
+  height: 100%;
+  border: 3px solid gold;
+  justify-content: left;
+  display: flex;
+  flex-direction: column;
+}
+
+#playerHP{
+  width: 100%;
+  height: 20%;
+  /* border: 3px solid blue; */
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+
+}
+
+#playerDMG{
+  width: 100%;
+  height: 20%;
+  /* border: 3px solid blue; */
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+}
+
+#playerArmor{
+  width: 100%;
+  height: 20%;
+  /* border: 3px solid blue; */
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+}
+
+#playerSpecial{
+  width: 100%;
+  height: 40%;
+  border: 3px solid blue;
+  display: flex;
+  justify-content: left;
+  font-size: 30px;
+  align-items: center;
 }
 
 #actions{
