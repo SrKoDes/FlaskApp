@@ -9,26 +9,35 @@
   </head>
   <body id = "arena">
     
+    <!-- fighting info quadrant -->
     <div id = "fightInfo"></div>
 
+
+    <!-- enemy quadrant -->
     <div id = "enemy">
 
       <div id = "enemyInfo">
-
         <div id = "enemyHP">HP: {{data[2][1]}}</div>
         <div id = "enemyDMG">Damage: {{data[2][2]}}</div>
         <div id = "enemyArmor">Armor: {{data[2][3]}}</div>
         <div id = "enemySpecial">SPECIAL {{data[2][4]}}</div>
-
       </div>
 
-      <div id = "enemyPic"> <img src = "{{data[3]}}"> </div>
+      <div id = "enemyRight">
+        <div id = "enemyPic"> <img src = "{{data[3]}}"> </div>
+        <div id = "enemyName">{{data[2][0]}}</div>
+      </div>
 
     </div>
     
+
+    <!-- player quadrant -->
     <div id = "player">
 
-      <div id = "playerPic"> <img src = "{{data[1]}}"></div>
+      <div id = "playerLeft">
+        <div id = "playerPic"> <img src = "{{data[1]}}"></div>
+        <div id = "playerName">{{data[0][0]}} </div>
+      </div>
 
       <div id = "playerInfo">
         <div id = "playerHP">HP: {{data[0][1]}}</div>
@@ -39,6 +48,7 @@
 
     </div>
     
+    <!-- actions quadrant -->
     <div id = "actions">
 
       <div class = "actionSpacer"></div>

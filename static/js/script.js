@@ -6,30 +6,32 @@
 const actionMenu = document.getElementById('actions');
 const attackButton = document.getElementById('attack');
 const abilitiesButton = document.getElementById('abilities');
-
+var character_data = []
+var enemy_data = []
 //abilitiesMenu elements
 const abilitiesMenu = document.getElementById('abilitiesMenu');
 
 
 //player elements
-const roleName = "Bear"
-const playerPicUrl= "/static/images/Bear.jpg"
 
-//buttons
-attackButton.addEventListener('click', populatePlayerDiv);
+//button actions
+attackButton.addEventListener('click', attack);
 abilitiesButton.addEventListener('click', goAbilitiesMenu);
 
-function getRandomDog() {
-  fetch('https://random.dog/woof.json', )
-  .then(result => result.json())
+function attack() {
+  fetch(`/character/info?element=${playerName.innerHTML}`)
+  .then( result => result.json())
   .then( data => {
-    if(data.url.includes('.mp4')) {
-      getRandomDog();
-    }
-    else{
-      playerPic.innerHTML = `<img src = "${data.url}"/>`
-    }
+    character_data = data
   });
+
+  fetch(`/character/info?element=${enemyName.innerHTML}`)
+  .then( result => result.json())
+  .then( data => {
+    enemy_data = data
+  });
+
+  
 }
 
 function populatePlayerDiv() {
@@ -50,4 +52,18 @@ function populatePlayerDiv() {
 function goAbilitiesMenu() {
   actionMenu.parentNode.removeChild(actionMenu)
   abilitiesMenu.style.display = "flex"
+}
+
+
+function getRandomDog() {
+  fetch('https://random.dog/woof.json', )
+  .then(result => result.json())
+  .then( data => {
+    if(data.url.includes('.mp4')) {
+      getRandomDog();
+    }
+    else{
+      playerPic.innerHTML = `<img src = "${data.url}"/>`
+    }
+  });
 }

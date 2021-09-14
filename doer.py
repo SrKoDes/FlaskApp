@@ -4,25 +4,29 @@ import json
 
 
 db_name = "koala.db"
-# application.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///" + db_name
-# application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-# db = SQLAlchemy(application)
 
-def get_character(element):
+
+
+def get_character_info(element):
     try:
         connection = sqlite3.connect(db_name)
         c = connection.cursor()
         c.execute("select * from koalas where Type='%s'" % element)
         info = c.fetchall()
-        return info
+        character_data = list(info[0])
+        print(character_data)
+        return character_data
     except Exception as e:
         print("Error: ", e)
         return None
 
+
+
 def get_arena_info(playerRole):
-    
+#this function will pull data from koala.db to be presented on the arena page.    
     data = []
 
+    #this block will return a list of the correct role's stats, and append it into data
     try:
         connection = sqlite3.connect(db_name)
         c = connection.cursor()
@@ -33,6 +37,7 @@ def get_arena_info(playerRole):
         print("Error: ", e)
         return None
 
+    #this block will pull the correct role's image, and append it into data
     if playerRole == "Bear":
         data.append("/static/images/Bear.jpg")
     elif playerRole == "Queenslander":
@@ -42,6 +47,7 @@ def get_arena_info(playerRole):
     elif playerRole == "Joey":
         data.append("/static/images/Joey.jpg")
 
+    #this block will return a list of the initial enemy's stats, and append it into data
     try:
         connection = sqlite3.connect(db_name)
         c = connection.cursor()
@@ -52,9 +58,11 @@ def get_arena_info(playerRole):
         print("Error: ", e)
         return None
 
+    #this block will return a list of the  inital enemy's stats, and append it into data
     data.append("/static/images/rabidkoala.jpeg")
     
     print(data)
     return data
 
-get_arena_info("Bear")
+# get_arena_info("Bear")
+get_character_info("Bear")

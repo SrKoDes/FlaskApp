@@ -93,7 +93,6 @@ img{
 #fightInfo{
   width: 50vw;
   height: 50vh;
-  border: 3px solid red;
 }
 
 #enemy{
@@ -106,7 +105,6 @@ img{
 #enemyInfo{
   width: 25vw;
   height: 100%;
-  border: 3px solid gold;
   justify-content: left;
   display: flex;
   flex-direction: column;
@@ -119,7 +117,6 @@ img{
   justify-content: center;
   font-size: 30px;
   align-items: center;
-  border: 3px solid blue;
 }
 
 #enemyDMG{
@@ -129,7 +126,6 @@ img{
   justify-content: center;
   font-size: 30px;
   align-items: center;
-  border: 3px solid blue;
 }
 
 #enemyArmor{
@@ -139,13 +135,12 @@ img{
   justify-content: center;
   font-size: 30px;
   align-items: center;
-  border: 3px solid blue;
 }
 
 #enemySpecial{
   width: 100%;
   height: 40%;
-  border: 3px solid blue;
+  border: 3px solid red;
   display: flex;
   justify-content: right;
   font-size: 30px;
@@ -153,31 +148,54 @@ img{
   text-align: right;
 }
 
-#enemyPic{
+#enemyRight{
   width: 25vw;
   max-width: 25vw;
   height: 100%;
-  border: 3px solid red
+}
+
+#enemyPic{
+  width: 25vw;
+  max-width: 25vw;
+  height: 80%;
+}
+
+#enemyName{
+  width: 25vw;
+  height: 20%;
+  text-align: center;
+  font-size: 35px;
 }
 
 #player{
   width: 50vw;
   height: 50vh;
-  border: 3px solid blue;
+  border: 3px solid green;
   display: flex;
+}
+
+#playerLeft{
+  width: 25vw;
+  max-width: 25vw;
+  height: 100%;
 }
 
 #playerPic{
   width: 25vw;
   max-width: 25vw;
-  height: 100%;
-  border: 3px solid red
+  height: 80%;
+}
+
+#playerName{
+  width: 25vw;
+  height: 20%;
+  text-align: center;
+  font-size: 50px;
 }
 
 #playerInfo{
   width: 25vw;
   height: 100%;
-  border: 3px solid gold;
   justify-content: left;
   display: flex;
   flex-direction: column;
@@ -186,7 +204,6 @@ img{
 #playerHP{
   width: 100%;
   height: 20%;
-  /* border: 3px solid blue; */
   display: flex;
   justify-content: center;
   font-size: 30px;
@@ -197,7 +214,6 @@ img{
 #playerDMG{
   width: 100%;
   height: 20%;
-  /* border: 3px solid blue; */
   display: flex;
   justify-content: center;
   font-size: 30px;
@@ -207,7 +223,6 @@ img{
 #playerArmor{
   width: 100%;
   height: 20%;
-  /* border: 3px solid blue; */
   display: flex;
   justify-content: center;
   font-size: 30px;
