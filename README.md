@@ -37,3 +37,6 @@ This is placed in the main executable for the app. When run directly, __name__ w
 What happens frequently when researching a solution, is following the wrong thread. You ask a question, and you get an answer that seems like the a solution, so you try to understand it further. You get to a point where you can get ready to implement it, but it doesn't work. In the process of searching for the fault, you realize the answer is not a proper solution at all. removeAttribute() vs removeChild() to get rid of the entire div.
 
 Another issue that arose was using the `fetch` function in my `script.js`. I wanted to fetch an api endpoint that makes a GET request to my database for information on characters. I used the back tick "\`" to format a string to include a variable name, but also included "" within the back ticks. This created an error as you don't need the "" when using the back ticks. I figured this out by right clicking the element > `Inspect`, `Network` and clicking on the api endpoint. This showed the an incorrect request URL with the addition of %22 attached to the URL. Googling url encoding 22 returned a ", meaning this charcter was undesired.
+
+
+use js to call a save route that will write to db using html variables

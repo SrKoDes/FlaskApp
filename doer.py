@@ -6,22 +6,6 @@ import json
 db_name = "koala.db"
 
 
-
-def get_character_info(element):
-    try:
-        connection = sqlite3.connect(db_name)
-        c = connection.cursor()
-        c.execute("select * from koalas where Type='%s'" % element)
-        info = c.fetchall()
-        character_data = list(info[0])
-        print(character_data)
-        return character_data
-    except Exception as e:
-        print("Error: ", e)
-        return None
-
-
-
 def get_arena_info(playerRole):
 #this function will pull data from koala.db to be presented on the arena page.    
     data = []
@@ -64,5 +48,35 @@ def get_arena_info(playerRole):
     print(data)
     return data
 
+
+def get_enemy_info(element):
+    try:
+        connection = sqlite3.connect(db_name)
+        c = connection.cursor()
+        c.execute("select * from Enemies where ID='%s'" % element)
+        info = c.fetchall()
+        character_data = list(info[0])
+        print(character_data)
+        return character_data
+    except Exception as e:
+        print("Error: ", e)
+        return None
+
+
+
+
+
+# def get_character_info(element):
+#     try:
+#         connection = sqlite3.connect(db_name)
+#         c = connection.cursor()
+#         c.execute("select * from koalas where Type='%s'" % element)
+#         info = c.fetchall()
+#         character_data = list(info[0])
+#         print(character_data)
+#         return character_data
+#     except Exception as e:
+#         print("Error: ", e)
+#         return None
 # get_arena_info("Bear")
-get_character_info("Bear")
+# get_character_info("Bear")

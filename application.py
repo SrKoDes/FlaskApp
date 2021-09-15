@@ -23,10 +23,10 @@ def attack_enemy():
     pass
 
 
-@application.route("/character/info", methods=["GET"])
+@application.route("/enemy/info", methods=["GET"])
 def get_character():
     element = request.args.get('element')
-    info = doer.get_character_info(element)
+    info = doer.get_enemy_info(element)
     # Return 404 if element not found
     if element is None:
         response = Response("{'error': 'Item Not Found - %s'}"  % element, status=404 , mimetype='application/json')
@@ -35,6 +35,24 @@ def get_character():
     # Return info
     response = Response(json.dumps(info), status=200, mimetype='application/json')
     return response
+
+
+
+
+
+
+# @application.route("/character/info", methods=["GET"])
+# def get_character():
+#     element = request.args.get('element')
+#     info = doer.get_character_info(element)
+#     # Return 404 if element not found
+#     if element is None:
+#         response = Response("{'error': 'Item Not Found - %s'}"  % element, status=404 , mimetype='application/json')
+#         return response
+
+#     # Return info
+#     response = Response(json.dumps(info), status=200, mimetype='application/json')
+#     return response
 
 
 
