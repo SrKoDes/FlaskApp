@@ -72,6 +72,10 @@ function getNextEnemy() {
 //     });
 // }
 
+function levelUpMenu() {
+    actionMenu.parentNode.removeChild(actionMenu)
+    levelUpMenu.style.display = "flex"
+}
 
 function goAbilitiesMenu() {
     actionMenu.parentNode.removeChild(actionMenu)

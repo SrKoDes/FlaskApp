@@ -1,71 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Fight!</title>
-    <link href="./static/css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  </head>
-  <body id = "arena">
-    
-    <!-- fighting info quadrant -->
-    <div id = "fightInfo"></div>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Fight!</title>
+        <link href="./static/css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body id = "arena">
+        
+        <!-- fighting info quadrant -->
+        <div id = "fightInfo"></div>
 
 
-    <!-- enemy quadrant -->
-    <div id = "enemy">
+        <!-- enemy quadrant -->
+        <div id = "enemy">
 
-      <div id = "enemyInfo">
-        <div id = "enemyHP">HP: {{data[1][2]}}</div>
-        <div id = "enemyDMG">Damage: {{data[1][3]}}</div>
-        <div id = "enemyArmor">Armor: {{data[1][4]}}</div>
-        <div id = "enemySpecial">SPECIAL {{data[1][5]}}</div>
-      </div>
+            <div id = "enemyInfo">
+                <div id = "enemyHP">HP: {{data[1][2]}}</div>
+                <div id = "enemyDMG">Damage: {{data[1][3]}}</div>
+                <div id = "enemyArmor">Armor: {{data[1][4]}}</div>
+                <div id = "enemySpecial">SPECIAL {{data[1][5]}}</div>
+            </div>
 
-      <div id = "enemyRight">
-        <div id = "enemyPic"> <img src = {{data[1][6]}}> </div>
-        <div id = "enemyName">{{data[1][1]}}</div>
-      </div>
+            <div id = "enemyRight">
+                <div id = "enemyPic"> <img src = {{data[1][6]}}> </div>
+                <div id = "enemyName">{{data[1][1]}}</div>
+            </div>
 
-    </div>
-    
+        </div>
+        
 
-    <!-- player quadrant -->
-    <div id = "player">
+        <!-- player quadrant -->
+        <div id = "player">
 
-      <div id = "playerLeft">
-        <div id = "playerPic"> <img src = {{data[0][5]}}></div>
-        <div id = "playerName">{{data[0][0]}} </div>
-      </div>
+            <div id = "playerLeft">
+                <div id = "playerPic"> <img src = {{data[0][5]}}></div>
+                <div id = "playerName">{{data[0][0]}} </div>
+            </div>
 
-      <div id = "playerInfo">
-        <div id = "playerHP">HP: {{data[0][1]}}</div>
-        <div id = "playerDMG">Damage: {{data[0][2]}}</div>
-        <div id = "playerArmor">Armor: {{data[0][3]}}</div>
-        <div id = "playerSpecial">SPECIAL {{data[0][4]}}</div>
-      </div>
+            <div id = "playerInfo">
+                <div id = "playerHP">HP: {{data[0][1]}}</div>
+                <div id = "playerDMG">Damage: {{data[0][2]}}</div>
+                <div id = "playerArmor">Armor: {{data[0][3]}}</div>
+                <div id = "playerSpecial">SPECIAL {{data[0][4]}}</div>
+            </div>
 
-    </div>
-    
-    <!-- actions quadrant -->
-    <div id = "actions">
+        </div>
+        
+        <!-- actions quadrant -->
+        <div id = "actions">
 
-      <div class = "actionSpacer"></div>
+            <div class = "actionSpacer"></div>
 
-      <button id = "attack"> Attack </button>
+            <button id = "attack"> Attack </button>
 
-      <div class = "actionSpacer"></div>
+            <div class = "actionSpacer"></div>
 
-      <button id = "abilities"> Use Abilities </button>
+            <button id = "abilities"> Use Abilities </button>
 
-      <div class = "actionSpacer"></div>
-    </div>
-    
-    <div id = "abilitiesMenu">
-      abilities
-    </div>
+            <div class = "actionSpacer"></div>
+        </div>
+        
+        <div id = "abilitiesMenu">
+            abilities
+        </div>
 
-    <script src="./static/js/script.js"></script>
-  </body>
+        <div id = "levelUpMenu">
+            <button class = "levelUpMenu"></button>
+        </div>
+
+        <script src="./static/js/script.js"></script>
+    </body>
 </html>
