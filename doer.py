@@ -22,20 +22,20 @@ def get_arena_info(playerRole):
         return None
 
     #this block will pull the correct role's image, and append it into data
-    if playerRole == "Bear":
-        data.append("/static/images/Bear.jpg")
-    elif playerRole == "Queenslander":
-        data.append("/static/images/Queenslander.jpeg")
-    elif playerRole == "Phascolarctos":
-        data.append("/static/images/Phascolarctos.jpeg")
-    elif playerRole == "Joey":
-        data.append("/static/images/Joey.jpg")
+    # if playerRole == "Bear":
+    #     data.append("/static/images/Bear.jpg")
+    # elif playerRole == "Queenslander":
+    #     data.append("/static/images/Queenslander.jpeg")
+    # elif playerRole == "Phascolarctos":
+    #     data.append("/static/images/Phascolarctos.jpeg")
+    # elif playerRole == "Joey":
+    #     data.append("/static/images/Joey.jpg")
 
     #this block will return a list of the initial enemy's stats, and append it into data
     try:
         connection = sqlite3.connect(db_name)
         c = connection.cursor()
-        c.execute("select * from koalas where Type='%s'" % "Enemy-RabidKoala")
+        c.execute("select * from Enemies where ID='%s'" % 0)
         info = c.fetchall()
         data.append(list(info[0]))
     except Exception as e:
@@ -43,7 +43,7 @@ def get_arena_info(playerRole):
         return None
 
     #this block will return a list of the  inital enemy's stats, and append it into data
-    data.append("/static/images/rabidkoala.jpeg")
+    # data.append("/static/images/rabidkoala.jpeg")
     
     print(data)
     return data
@@ -78,5 +78,5 @@ def get_enemy_info(element):
 #     except Exception as e:
 #         print("Error: ", e)
 #         return None
-# get_arena_info("Bear")
+get_arena_info("Bear")
 # get_character_info("Bear")

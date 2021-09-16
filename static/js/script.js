@@ -1,7 +1,7 @@
 //index html
 
 //arena html variables
-var enemyCounter = 1
+let enemyCounter = 1
 //actions elements
 const actionMenu = document.getElementById('actions');
 const attackButton = document.getElementById('attack');
@@ -22,7 +22,7 @@ function attack() {
     else {
         enemyHP.innerHTML = `HP: ${enemyHP.innerHTML.slice(4) - playerDMG.innerHTML.slice(8) + enemyArmor.innerHTML.slice(8)}`
         if (parseInt(enemyHP.innerHTML[4]) <= 0) {
-            fightInfo.innerHTML = "Congratulations You Won!"
+            fightInfo.innerHTML = "Congratulations you won!"
             enemyHP.innerHTML = "HP: 0"
             getNextEnemy()
         }
@@ -44,6 +44,7 @@ function getNextEnemy() {
     fetch(`/enemy/info?element=${enemyCounter}`)
         .then( result => result.json())
         .then( data => {
+            enemyName.innerHTML = data[1]
             enemyHP.innerHTML = `HP: ${data[2]}`
             enemyDMG.innerHTML = `Damage: ${data[3]}`
             enemyArmor.innerHTML = `Armor: ${data[4]}`
